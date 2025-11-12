@@ -208,19 +208,19 @@ export default function Home() {
 
   if (!started) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-3 sm:p-4 md:p-6">
         <Card className="max-w-2xl w-full shadow-2xl border-0 overflow-hidden">
-          {/* Imagem de Capa Atrativa */}
-          <div className="relative h-64 w-full overflow-hidden">
+          {/* Imagem de Capa Atrativa - Responsiva */}
+          <div className="relative h-48 sm:h-56 md:h-64 w-full overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop" 
               alt="Jovens sorrindo fazendo teste"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end justify-center pb-6">
-              <div className="text-center">
-                <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full inline-block">
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end justify-center pb-4 sm:pb-6">
+              <div className="text-center px-4">
+                <div className="bg-white/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full inline-block">
+                  <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     Teste de QI Definitivo
                   </h1>
                 </div>
@@ -228,38 +228,38 @@ export default function Home() {
             </div>
           </div>
 
-          <CardHeader className="text-center space-y-4 pb-6 pt-6">
+          <CardHeader className="text-center space-y-3 sm:space-y-4 pb-4 sm:pb-6 pt-4 sm:pt-6 px-4 sm:px-6">
             <div className="flex justify-center">
-              <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-full">
-                <Brain className="w-12 h-12 text-white" />
+              <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-3 sm:p-4 rounded-full">
+                <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
               </div>
             </div>
-            <CardDescription className="text-lg text-gray-600">
+            <CardDescription className="text-base sm:text-lg text-gray-600">
               55 perguntas elaboradas para medir sua inteligência real
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg text-center">
-                <Zap className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-blue-900">55 Perguntas</h3>
-                <p className="text-sm text-blue-700">Desafio completo</p>
+          <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 sm:p-4 rounded-lg text-center">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mx-auto mb-2" />
+                <h3 className="font-semibold text-sm sm:text-base text-blue-900">55 Perguntas</h3>
+                <p className="text-xs sm:text-sm text-blue-700">Desafio completo</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg text-center">
-                <Brain className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-purple-900">5 Categorias</h3>
-                <p className="text-sm text-purple-700">Análise detalhada</p>
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-3 sm:p-4 rounded-lg text-center">
+                <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mx-auto mb-2" />
+                <h3 className="font-semibold text-sm sm:text-base text-purple-900">5 Categorias</h3>
+                <p className="text-xs sm:text-sm text-purple-700">Análise detalhada</p>
               </div>
-              <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg text-center">
-                <Trophy className="w-8 h-8 text-pink-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-pink-900">QI Preciso</h3>
-                <p className="text-sm text-pink-700">Resultado científico</p>
+              <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-3 sm:p-4 rounded-lg text-center">
+                <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-pink-600 mx-auto mb-2" />
+                <h3 className="font-semibold text-sm sm:text-base text-pink-900">QI Preciso</h3>
+                <p className="text-xs sm:text-sm text-pink-700">Resultado científico</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-4 rounded">
-              <h4 className="font-semibold text-yellow-900 mb-2">📊 O que você vai descobrir:</h4>
-              <ul className="space-y-1 text-sm text-yellow-800">
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded">
+              <h4 className="font-semibold text-sm sm:text-base text-yellow-900 mb-2">📊 O que você vai descobrir:</h4>
+              <ul className="space-y-1 text-xs sm:text-sm text-yellow-800">
                 <li>✓ Seu QI exato (escala 70-155)</li>
                 <li>✓ Classificação de inteligência</li>
                 <li>✓ Pontos fortes e fracos</li>
@@ -270,10 +270,10 @@ export default function Home() {
 
             <Button 
               onClick={handleStart}
-              className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
+              className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
             >
               Começar Teste Agora
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
 
             <p className="text-xs text-center text-gray-500">
@@ -290,77 +290,77 @@ export default function Home() {
     const answeredAll = answers.every(a => a !== -1)
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-3 sm:p-4 md:p-6">
         <Card className="max-w-2xl w-full shadow-2xl border-0">
-          <CardHeader className="text-center space-y-4">
+          <CardHeader className="text-center space-y-3 sm:space-y-4 px-4 sm:px-6">
             <div className="flex justify-center">
-              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 p-4 rounded-full">
-                <Trophy className="w-16 h-16 text-white" />
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 p-3 sm:p-4 rounded-full">
+                <Trophy className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
               </div>
             </div>
-            <CardTitle className="text-3xl font-bold">
+            <CardTitle className="text-2xl sm:text-3xl font-bold">
               Parabéns! Você completou o teste! 🎉
             </CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-base sm:text-lg">
               {answeredAll 
                 ? "Todas as 55 perguntas foram respondidas!"
                 : `Você respondeu ${answers.filter(a => a !== -1).length} de 55 perguntas`}
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-8 rounded-lg text-center relative overflow-hidden">
+          <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6">
+            <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6 sm:p-8 rounded-lg text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm flex items-center justify-center">
-                <Lock className="w-24 h-24 text-gray-400" />
+                <Lock className="w-16 h-16 sm:w-24 sm:h-24 text-gray-400" />
               </div>
               <div className="relative z-10 blur-sm select-none">
-                <p className="text-6xl font-bold text-gray-800 mb-2">???</p>
-                <p className="text-xl text-gray-600">Seu QI está aqui!</p>
+                <p className="text-5xl sm:text-6xl font-bold text-gray-800 mb-2">???</p>
+                <p className="text-lg sm:text-xl text-gray-600">Seu QI está aqui!</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-purple-200 p-6 rounded-lg">
-              <h3 className="font-semibold text-purple-900 mb-4 text-center text-lg">
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg">
+              <h3 className="font-semibold text-purple-900 mb-3 sm:mb-4 text-center text-base sm:text-lg">
                 🔓 Desbloqueie seu resultado completo:
               </h3>
-              <ul className="space-y-2 text-sm text-purple-800 mb-4">
+              <ul className="space-y-2 text-xs sm:text-sm text-purple-800 mb-4">
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Seu QI exato</strong> na escala internacional (70-155)</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Classificação detalhada</strong> (Gênio, Superdotado, Superior, etc)</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Análise por categoria</strong> (Lógica, Matemática, Verbal, Espacial, Memória)</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Comparação populacional</strong> - Você está no top X%</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Certificado digital</strong> para compartilhar nas redes sociais</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span><strong>Dicas personalizadas</strong> para desenvolver suas habilidades</span>
                 </li>
               </ul>
 
-              <div className="bg-white p-4 rounded-lg text-center border-2 border-green-500">
-                <p className="text-sm text-gray-600 mb-1">Investimento único de</p>
-                <p className="text-4xl font-bold text-green-600 mb-1">R$ 3,00</p>
+              <div className="bg-white p-3 sm:p-4 rounded-lg text-center border-2 border-green-500">
+                <p className="text-xs sm:text-sm text-gray-600 mb-1">Investimento único de</p>
+                <p className="text-3xl sm:text-4xl font-bold text-green-600 mb-1">R$ 3,00</p>
                 <p className="text-xs text-gray-500">Pagamento seguro via PIX</p>
               </div>
             </div>
 
             <Button 
               onClick={handlePayment}
-              className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg"
+              className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg"
             >
-              <Lock className="mr-2 w-5 h-5" />
+              <Lock className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
               Desbloquear Resultado Completo - R$ 3,00
             </Button>
 
@@ -398,37 +398,37 @@ export default function Home() {
     })
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4 py-8">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-3 sm:p-4 md:p-6 py-6 sm:py-8">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           {/* Resultado Principal */}
           <Card className="shadow-2xl border-0 overflow-hidden">
-            <div className={`bg-gradient-to-r ${category.color} p-8 text-white text-center`}>
-              <div className="text-6xl mb-4">{category.emoji}</div>
-              <h1 className="text-5xl font-bold mb-2">{iq}</h1>
-              <p className="text-2xl font-semibold mb-1">Seu QI</p>
-              <Badge className="bg-white/20 text-white text-lg px-4 py-1">
+            <div className={`bg-gradient-to-r ${category.color} p-6 sm:p-8 text-white text-center`}>
+              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">{category.emoji}</div>
+              <h1 className="text-4xl sm:text-5xl font-bold mb-2">{iq}</h1>
+              <p className="text-xl sm:text-2xl font-semibold mb-1">Seu QI</p>
+              <Badge className="bg-white/20 text-white text-base sm:text-lg px-3 sm:px-4 py-1">
                 {category.label}
               </Badge>
             </div>
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <p className="text-3xl font-bold text-blue-600">{score}/55</p>
-                  <p className="text-sm text-blue-800">Acertos</p>
+            <CardContent className="p-4 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="text-center p-3 sm:p-4 bg-blue-50 rounded-lg">
+                  <p className="text-2xl sm:text-3xl font-bold text-blue-600">{score}/55</p>
+                  <p className="text-xs sm:text-sm text-blue-800">Acertos</p>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <p className="text-3xl font-bold text-purple-600">{percentage.toFixed(0)}%</p>
-                  <p className="text-sm text-purple-800">Aproveitamento</p>
+                <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-lg">
+                  <p className="text-2xl sm:text-3xl font-bold text-purple-600">{percentage.toFixed(0)}%</p>
+                  <p className="text-xs sm:text-sm text-purple-800">Aproveitamento</p>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <p className="text-3xl font-bold text-green-600">Top {(100 - populationPercentile).toFixed(0)}%</p>
-                  <p className="text-sm text-green-800">Da População</p>
+                <div className="text-center p-3 sm:p-4 bg-green-50 rounded-lg">
+                  <p className="text-2xl sm:text-3xl font-bold text-green-600">Top {(100 - populationPercentile).toFixed(0)}%</p>
+                  <p className="text-xs sm:text-sm text-green-800">Da População</p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-4 rounded mb-6">
-                <h3 className="font-semibold text-yellow-900 mb-2">📊 O que isso significa?</h3>
-                <p className="text-sm text-yellow-800">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded mb-4 sm:mb-6">
+                <h3 className="font-semibold text-sm sm:text-base text-yellow-900 mb-2">📊 O que isso significa?</h3>
+                <p className="text-xs sm:text-sm text-yellow-800">
                   {iq >= 130 && "Você possui inteligência excepcional! Está entre os 2% mais inteligentes da população. Suas habilidades cognitivas são extraordinárias."}
                   {iq >= 120 && iq < 130 && "Você tem inteligência superior! Está entre os 10% mais inteligentes. Suas capacidades de raciocínio são excelentes."}
                   {iq >= 110 && iq < 120 && "Você está acima da média! Possui boas habilidades cognitivas e facilidade para aprender."}
@@ -441,10 +441,10 @@ export default function Home() {
 
           {/* Análise por Categoria */}
           <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl">📈 Análise Detalhada por Categoria</CardTitle>
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="text-xl sm:text-2xl">📈 Análise Detalhada por Categoria</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-3 sm:space-y-4 px-4 sm:px-6">
               {Object.entries(categoryScores).map(([cat, data]) => {
                 const catPercentage = (data.correct / data.total) * 100
                 const catName = {
@@ -458,10 +458,10 @@ export default function Home() {
                 return (
                   <div key={cat} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="font-semibold">{catName}</span>
-                      <span className="text-sm text-gray-600">{data.correct}/{data.total} ({catPercentage.toFixed(0)}%)</span>
+                      <span className="font-semibold text-sm sm:text-base">{catName}</span>
+                      <span className="text-xs sm:text-sm text-gray-600">{data.correct}/{data.total} ({catPercentage.toFixed(0)}%)</span>
                     </div>
-                    <Progress value={catPercentage} className="h-3" />
+                    <Progress value={catPercentage} className="h-2 sm:h-3" />
                   </div>
                 )
               })}
@@ -470,30 +470,30 @@ export default function Home() {
 
           {/* Certificado Compartilhável */}
           <Card className="shadow-xl bg-gradient-to-br from-purple-50 to-pink-50">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">🏆 Compartilhe seu Resultado!</CardTitle>
-              <CardDescription>Mostre sua inteligência para amigos e familiares</CardDescription>
+            <CardHeader className="text-center px-4 sm:px-6">
+              <CardTitle className="text-xl sm:text-2xl">🏆 Compartilhe seu Resultado!</CardTitle>
+              <CardDescription className="text-sm sm:text-base">Mostre sua inteligência para amigos e familiares</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="bg-white p-6 rounded-lg border-2 border-purple-200 text-center">
-                <div className="text-4xl mb-2">{category.emoji}</div>
-                <h3 className="text-2xl font-bold text-purple-900 mb-1">QI: {iq}</h3>
-                <p className="text-purple-700">{category.label}</p>
-                <p className="text-sm text-gray-600 mt-2">Teste de QI Definitivo - 55 Perguntas</p>
+            <CardContent className="space-y-3 sm:space-y-4 px-4 sm:px-6">
+              <div className="bg-white p-4 sm:p-6 rounded-lg border-2 border-purple-200 text-center">
+                <div className="text-3xl sm:text-4xl mb-2">{category.emoji}</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-purple-900 mb-1">QI: {iq}</h3>
+                <p className="text-sm sm:text-base text-purple-700">{category.label}</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-2">Teste de QI Definitivo - 55 Perguntas</p>
               </div>
 
               <Button 
                 onClick={handleShare}
-                className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                className="w-full h-11 sm:h-12 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
               >
-                <Share2 className="mr-2 w-5 h-5" />
+                <Share2 className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                 Compartilhar Resultado
               </Button>
 
               <Button 
                 onClick={handleRestart}
                 variant="outline"
-                className="w-full h-12"
+                className="w-full h-11 sm:h-12 text-sm sm:text-base"
               >
                 Fazer Teste Novamente
               </Button>
@@ -502,33 +502,33 @@ export default function Home() {
 
           {/* Dicas Personalizadas */}
           <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl">💡 Dicas para Desenvolver sua Inteligência</CardTitle>
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="text-xl sm:text-2xl">💡 Dicas para Desenvolver sua Inteligência</CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="space-y-3 text-sm">
+            <CardContent className="px-4 sm:px-6">
+              <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Leia diariamente:</strong> Livros, artigos e conteúdos diversos expandem vocabulário e raciocínio</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Resolva puzzles:</strong> Sudoku, palavras cruzadas e jogos de lógica fortalecem conexões neurais</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Aprenda algo novo:</strong> Idiomas, instrumentos musicais ou habilidades desafiam o cérebro</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Pratique matemática:</strong> Cálculos mentais diários melhoram raciocínio quantitativo</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Durma bem:</strong> 7-9 horas de sono consolidam memória e aprendizado</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✓</span>
+                  <span className="text-green-600 mr-2 flex-shrink-0">✓</span>
                   <span><strong>Exercite-se:</strong> Atividade física aumenta fluxo sanguíneo cerebral</span>
                 </li>
               </ul>
@@ -542,10 +542,10 @@ export default function Home() {
   // Aguardar perguntas serem embaralhadas
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
         <div className="text-white text-center">
-          <Brain className="w-16 h-16 mx-auto mb-4 animate-pulse" />
-          <p className="text-xl font-semibold">Preparando seu teste...</p>
+          <Brain className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 animate-pulse" />
+          <p className="text-lg sm:text-xl font-semibold">Preparando seu teste...</p>
         </div>
       </div>
     )
@@ -555,23 +555,23 @@ export default function Home() {
   const answeredCount = answers.filter(a => a !== -1).length
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-3 sm:p-4 md:p-6 py-6 sm:py-8">
       <div className="max-w-3xl mx-auto">
         {/* Header com Progresso */}
-        <Card className="mb-6 shadow-xl border-0">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between mb-4">
+        <Card className="mb-4 sm:mb-6 shadow-xl border-0">
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                <Brain className="w-6 h-6 text-purple-600" />
-                <span className="font-semibold text-gray-700">
+                <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                <span className="font-semibold text-sm sm:text-base text-gray-700">
                   Pergunta {currentQuestion + 1} de {questions.length}
                 </span>
               </div>
-              <Badge variant="secondary" className="text-sm">
+              <Badge variant="secondary" className="text-xs sm:text-sm">
                 {answeredCount}/{questions.length} respondidas
               </Badge>
             </div>
-            <Progress value={progress} className="h-3" />
+            <Progress value={progress} className="h-2 sm:h-3" />
             <div className="flex justify-between mt-2 text-xs text-gray-600">
               <span>{progress.toFixed(0)}% completo</span>
               <span>~{Math.ceil((questions.length - currentQuestion) * 0.3)} min restantes</span>
@@ -580,10 +580,10 @@ export default function Home() {
         </Card>
 
         {/* Pergunta */}
-        <Card className="shadow-2xl border-0 mb-6">
-          <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
-            <div className="flex items-start justify-between mb-2">
-              <Badge className={`
+        <Card className="shadow-2xl border-0 mb-4 sm:mb-6">
+          <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 sm:p-6">
+            <div className="flex items-start justify-between mb-2 flex-wrap gap-2">
+              <Badge className={`text-xs sm:text-sm
                 ${currentQ.difficulty === 'facil' ? 'bg-green-500' : ''}
                 ${currentQ.difficulty === 'medio' ? 'bg-yellow-500' : ''}
                 ${currentQ.difficulty === 'dificil' ? 'bg-red-500' : ''}
@@ -592,7 +592,7 @@ export default function Home() {
                 {currentQ.difficulty === 'medio' ? '⭐⭐ Médio' : ''}
                 {currentQ.difficulty === 'dificil' ? '⭐⭐⭐ Difícil' : ''}
               </Badge>
-              <Badge variant="outline">
+              <Badge variant="outline" className="text-xs sm:text-sm">
                 {currentQ.category === 'logica' ? '🧩 Lógica' : ''}
                 {currentQ.category === 'matematica' ? '🔢 Matemática' : ''}
                 {currentQ.category === 'verbal' ? '📝 Verbal' : ''}
@@ -600,23 +600,23 @@ export default function Home() {
                 {currentQ.category === 'memoria' ? '🧠 Memória' : ''}
               </Badge>
             </div>
-            <CardTitle className="text-2xl leading-relaxed">
+            <CardTitle className="text-lg sm:text-xl md:text-2xl leading-relaxed">
               {currentQ.question}
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <RadioGroup value={selectedAnswer.toString()} onValueChange={(v) => handleAnswer(parseInt(v))}>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {currentQ.options.map((option, index) => (
                   <div
                     key={index}
-                    className={`flex items-center space-x-3 p-4 rounded-lg border-2 transition-all cursor-pointer hover:border-purple-400 hover:bg-purple-50 ${
+                    className={`flex items-center space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-lg border-2 transition-all cursor-pointer hover:border-purple-400 hover:bg-purple-50 ${
                       selectedAnswer === index ? 'border-purple-600 bg-purple-50' : 'border-gray-200'
                     }`}
                     onClick={() => handleAnswer(index)}
                   >
-                    <RadioGroupItem value={index.toString()} id={`option-${index}`} />
-                    <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer text-base">
+                    <RadioGroupItem value={index.toString()} id={`option-${index}`} className="flex-shrink-0" />
+                    <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer text-sm sm:text-base">
                       {option}
                     </Label>
                   </div>
@@ -627,29 +627,30 @@ export default function Home() {
         </Card>
 
         {/* Navegação */}
-        <div className="flex gap-4">
+        <div className="flex gap-3 sm:gap-4">
           <Button
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
             variant="outline"
-            className="flex-1 h-12"
+            className="flex-1 h-11 sm:h-12 text-sm sm:text-base"
           >
-            <ArrowLeft className="mr-2 w-5 h-5" />
-            Anterior
+            <ArrowLeft className="mr-1 sm:mr-2 w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="hidden sm:inline">Anterior</span>
+            <span className="sm:hidden">Voltar</span>
           </Button>
           <Button
             onClick={handleNext}
             disabled={selectedAnswer === -1}
-            className="flex-1 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+            className="flex-1 h-11 sm:h-12 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
           >
             {currentQuestion === questions.length - 1 ? 'Finalizar' : 'Próxima'}
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
         </div>
 
         {/* Indicador de resposta */}
         {selectedAnswer === -1 && (
-          <p className="text-center text-white text-sm mt-4">
+          <p className="text-center text-white text-xs sm:text-sm mt-3 sm:mt-4">
             ⚠️ Selecione uma resposta para continuar
           </p>
         )}
