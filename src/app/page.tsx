@@ -8,6 +8,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { Brain, Trophy, Zap, Lock, CheckCircle2, ArrowRight, ArrowLeft, Share2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { generateCheckoutUrl } from "@/lib/kiwify"
 
 interface Question {
   id: number
@@ -103,6 +105,8 @@ export default function Home() {
   const [finished, setFinished] = useState(false)
   const [paid, setPaid] = useState(false)
   const [questions, setQuestions] = useState<Question[]>([])
+  const [customerName, setCustomerName] = useState("")
+  const [customerEmail, setCustomerEmail] = useState("")
 
   // Embaralhar perguntas ao iniciar o teste
   useEffect(() => {
@@ -175,10 +179,46 @@ export default function Home() {
     return { label: "Precisa Treinar Mais", color: "from-red-500 to-orange-500", emoji: "💪" }
   }
 
-  const handlePayment = () => {
-    // Simulação de pagamento - em produção, integrar com gateway real
-    setPaid(true)
+  const handlePayment = async () => {
+    // Salvar dados do teste no localStorage
+    localStorage.setItem('testAnswers', JSON.stringify(answers))
+    localStorage.setItem('testQuestions', JSON.stringify(questions))
+    
+    // Gerar URL de checkout personalizada com dados do cliente
+    const checkoutUrl = generateCheckoutUrl({
+      name: customerName,
+      email: customerEmail
+    })
+    
+    // Redirecionar para checkout da Kiwify
+    window.location.href = checkoutUrl
   }
+
+  // Verificar se usuário voltou do pagamento
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const paymentSuccess = urlParams.get('payment') === 'success'
+    
+    if (paymentSuccess) {
+      // Recuperar dados do teste
+      const savedAnswers = localStorage.getItem('testAnswers')
+      const savedQuestions = localStorage.getItem('testQuestions')
+      
+      if (savedAnswers && savedQuestions) {
+        setAnswers(JSON.parse(savedAnswers))
+        setQuestions(JSON.parse(savedQuestions))
+        setPaid(true)
+        setFinished(true)
+        
+        // Limpar localStorage
+        localStorage.removeItem('testAnswers')
+        localStorage.removeItem('testQuestions')
+        
+        // Limpar URL
+        window.history.replaceState({}, '', window.location.pathname)
+      }
+    }
+  }, [])
 
   const handleShare = () => {
     const score = calculateScore()
@@ -204,6 +244,8 @@ export default function Home() {
     setFinished(false)
     setPaid(false)
     setQuestions([])
+    setCustomerName("")
+    setCustomerEmail("")
   }
 
   if (!started) {
@@ -349,19 +391,46 @@ export default function Home() {
                 </li>
               </ul>
 
-              <div className="bg-white p-3 sm:p-4 rounded-lg text-center border-2 border-green-500">
+              <div className="bg-white p-3 sm:p-4 rounded-lg text-center border-2 border-green-500 mb-4">
                 <p className="text-xs sm:text-sm text-gray-600 mb-1">Investimento único de</p>
-                <p className="text-3xl sm:text-4xl font-bold text-green-600 mb-1">R$ 3,00</p>
-                <p className="text-xs text-gray-500">Pagamento seguro via PIX</p>
+                <p className="text-3xl sm:text-4xl font-bold text-green-600 mb-1">R$ 5,00</p>
+                <p className="text-xs text-gray-500">Pagamento seguro via Kiwify</p>
+              </div>
+
+              {/* Formulário de dados do cliente */}
+              <div className="space-y-3 mb-4">
+                <div>
+                  <Label htmlFor="name" className="text-sm">Nome completo</Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="Seu nome"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    className="mt-1"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email" className="text-sm">E-mail</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    value={customerEmail}
+                    onChange={(e) => setCustomerEmail(e.target.value)}
+                    className="mt-1"
+                  />
+                </div>
               </div>
             </div>
 
             <Button 
               onClick={handlePayment}
-              className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg"
+              disabled={!customerName || !customerEmail}
+              className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Lock className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
-              Desbloquear Resultado Completo - R$ 3,00
+              Desbloquear Resultado - R$ 5,00
             </Button>
 
             <p className="text-xs text-center text-gray-600">
